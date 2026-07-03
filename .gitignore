@@ -1,0 +1,53 @@
+### Java / Maven
+backend/**/target/
+backend/**/*.class
+backend/**/*.jar
+backend/**/*.war
+*.log
+*.iml
+.idea/
+*.classpath
+*.project
+.settings/
+.sts4-cache/
+
+### Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/coverage/
+frontend/.pnp
+frontend/.pnp.js
+frontend/.yarn/install-state.gz
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+### Playwright
+frontend/playwright-report/
+frontend/test-results/
+
+### Environment
+.env
+.env.local
+.env.*.local
+*.pem
+
+### OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+### IDE
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+### Docker
+nginx/ssl/
+nginx/ssl-data/

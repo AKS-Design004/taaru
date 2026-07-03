@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "ignore": [
+    {
+      "id": "GHSA-9g9p-9gw9-jx7f",
+      "reason": "Next.js 14.x - Image Optimizer DoS, mitigation via sharp configuration"
+    },
+    {
+      "id": "GHSA-h25m-26qc-wcjf",
+      "reason": "Next.js 14.x - RSC deserialization, mitigation via not exposing RSC APIs"
+    },
+    {
+      "id": "GHSA-ggv3-7p47-pfv8",
+      "reason": "Next.js 14.x - Request smuggling in rewrites, planned Next.js 14.2.19+ upgrade"
+    },
+    {
+      "id": "GHSA-3x4c-7xq6-9pq8",
+      "reason": "Next.js 14.x - Image cache DoS, mitigation via config limit"
+    },
+    {
+      "id": "GHSA-q4gf-8mx6-v5v3",
+      "reason": "Next.js 14.x - RSC DoS, planned Next.js upgrade"
+    },
+    {
+      "id": "GHSA-qx2v-qp2m-jg93",
+      "reason": "PostCSS XSS (transitive via Next.js), mitigated by React's default escaping"
+    },
+    {
+      "id": "GHSA-5c6j-r48x-rmvq",
+      "reason": "serialize-javascript via workbox (next-pwa), non-blocking"
+    }
+  ]
+}
