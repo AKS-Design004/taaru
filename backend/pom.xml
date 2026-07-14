@@ -16,6 +16,13 @@
         <module>common</module>
         <module>auth</module>
         <module>provider</module>
+        <module>booking</module>
+        <module>payment</module>
+        <module>messaging</module>
+        <module>notification</module>
+        <module>search</module>
+        <module>review</module>
+        <module>admin</module>
         <module>api</module>
     </modules>
 
@@ -35,6 +42,7 @@
         <jacoco.version>0.8.12</jacoco.version>
         <pmd.version>7.1.0</pmd.version>
         <sonar.version>4.0.0.4121</sonar.version>
+        <archunit.version>1.3.0</archunit.version>
     </properties>
 
     <dependencyManagement>
@@ -53,6 +61,47 @@
                 <groupId>com.taaru</groupId>
                 <artifactId>provider</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>booking</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>payment</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>notification</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>search</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>review</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taaru</groupId>
+                <artifactId>admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tngtech.archunit</groupId>
+                <artifactId>archunit-junit5</artifactId>
+                <version>${archunit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

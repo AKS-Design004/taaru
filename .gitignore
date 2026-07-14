@@ -48,6 +48,9 @@ Thumbs.db
 .classpath
 .settings/
 
+### BMad agent working directory
+_bmad/
+
 ### Docker
 nginx/ssl/
 nginx/ssl-data/

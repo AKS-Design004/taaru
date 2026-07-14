@@ -4,4 +4,8 @@ public class InvalidCredentialsException extends BusinessException {
     public InvalidCredentialsException() {
         super("INVALID_CREDENTIALS", "Email ou mot de passe incorrect");
     }
+
+    public InvalidCredentialsException(String message) {
+        super("INVALID_CREDENTIALS", message);
+    }
 }
