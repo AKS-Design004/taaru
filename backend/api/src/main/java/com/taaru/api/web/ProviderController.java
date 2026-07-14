@@ -36,7 +36,8 @@ public class ProviderController {
             @RequestParam(required = false) String category,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "12") int size) {
-        var result = providerService.searchProviders(query, city, category, page, size);
+        var safeSize = Math.max(size, 1);
+        var result = providerService.searchProviders(query, city, category, page, safeSize);
         return ResponseEntity.ok(ApiResponse.ok(result));
     }
 

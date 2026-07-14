@@ -56,6 +56,10 @@ _bmad/
 .opencode/
 backend/server.err
 
+### Project docs & AI context (not for GitHub)
+docs/
+AGENTS.md
+
 ### Docker
 nginx/ssl/
 nginx/ssl-data/

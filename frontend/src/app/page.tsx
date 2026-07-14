@@ -57,7 +57,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    searchProviders({ size: 0 })
+    searchProviders({ size: 1 })
       .then((res) => setRealTotalProviders(res.totalElements))
       .catch(() => {});
   }, []);
