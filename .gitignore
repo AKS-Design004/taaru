@@ -51,6 +51,11 @@ Thumbs.db
 ### BMad agent working directory
 _bmad/
 
+### Agent skills & opencode config (local AI tooling)
+.agents/
+.opencode/
+backend/server.err
+
 ### Docker
 nginx/ssl/
 nginx/ssl-data/
