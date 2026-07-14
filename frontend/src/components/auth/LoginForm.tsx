@@ -33,9 +33,9 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/50 text-red-500 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-status-error-bg border border-status-error/30 text-status-error px-4 py-3 rounded-xl text-sm font-body">
           {error}
         </div>
       )}
@@ -60,9 +60,9 @@ export default function LoginForm() {
         Se connecter
       </Button>
 
-      <p className="text-center text-sm text-gray-500">
+      <p className="text-center text-sm text-white/30 font-body">
         Pas encore de compte ?{" "}
-        <Link href="/auth/register" className="text-[#D4AF37] hover:underline">
+        <Link href="/auth/register" className="text-white/60 hover:text-white transition-colors">
           S&apos;inscrire
         </Link>
       </p>

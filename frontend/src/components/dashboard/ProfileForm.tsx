@@ -72,7 +72,7 @@ export default function ProfileForm() {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="w-8 h-8 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-gold-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -80,7 +80,7 @@ export default function ProfileForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/50 text-red-500 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-status-error-bg border border-status-error/50 text-status-error px-4 py-3 rounded-lg text-sm">
           {error}
         </div>
       )}
@@ -93,15 +93,15 @@ export default function ProfileForm() {
           defaultValue={existing?.businessName}
           placeholder="Salon de coiffure XYZ"
         />
-        <div className="space-y-1">
-          <label className="block text-sm font-medium text-gray-300">
+        <div className="space-y-1.5">
+          <label className="block text-sm font-medium text-surface-300">
             Catégorie
           </label>
           <select
             name="category"
             required
             defaultValue={existing?.category?.toLowerCase() || ""}
-            className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#D4AF37]"
+            className="input-field"
           >
             <option value="">Sélectionnez</option>
             <option value="mode">Mode</option>
@@ -119,8 +119,8 @@ export default function ProfileForm() {
         placeholder="Ex: Coiffure, Maquillage, Robe de mariée..."
       />
 
-      <div className="space-y-1">
-        <label className="block text-sm font-medium text-gray-300">
+      <div className="space-y-1.5">
+        <label className="block text-sm font-medium text-surface-300">
           Description
         </label>
         <textarea
@@ -128,7 +128,7 @@ export default function ProfileForm() {
           rows={4}
           defaultValue={existing?.description || ""}
           placeholder="Présentez votre activité..."
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] resize-none"
+          className="input-field resize-none min-h-[100px]"
         />
       </div>
 

@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
   loading?: boolean;
 }
@@ -9,33 +10,42 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({
   children,
   variant = "primary",
+  size = "md",
   fullWidth = false,
   loading = false,
   className = "",
   disabled,
   ...props
 }: ButtonProps) {
-  const base =
-    "px-6 py-3 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
+  const sizes = {
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3",
+    lg: "px-8 py-4 text-lg",
+  };
 
   const variants = {
-    primary: "bg-[#D4AF37] text-black hover:bg-[#E8C547] active:bg-[#B8962F]",
-    secondary: "bg-white text-black hover:bg-gray-200",
+    primary:
+      "liquid-glass-strong text-white font-medium hover:bg-white/10 transition-colors",
+    secondary:
+      "bg-white text-black font-medium hover:bg-white/90",
     outline:
-      "border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black",
-    ghost: "text-gray-300 hover:text-white hover:bg-gray-800",
+      "liquid-glass text-white/80 font-medium hover:text-white hover:bg-white/5",
+    ghost: "text-white/40 hover:text-white/80 font-normal",
   };
+
+  const base =
+    "inline-flex items-center justify-center rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none font-body text-sm";
 
   return (
     <button
-      className={`${base} ${variants[variant]} ${fullWidth ? "w-full" : ""} ${className}`}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${fullWidth ? "w-full" : ""} ${className}`}
       disabled={disabled || loading}
       {...props}
     >
       {loading ? (
         <span className="flex items-center justify-center gap-2">
-          <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          Chargement...
+          <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+          <span className="text-white/60">Chargement...</span>
         </span>
       ) : (
         children

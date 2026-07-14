@@ -45,14 +45,14 @@ export default function RegisterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/50 text-red-500 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-status-error-bg border border-status-error/30 text-status-error px-4 py-3 rounded-xl text-sm font-body">
           {error}
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <Input label="Prénom" name="firstName" required placeholder="Jean" />
         <Input label="Nom" name="lastName" required placeholder="Dupont" />
       </div>
@@ -81,27 +81,29 @@ export default function RegisterForm() {
         placeholder="Répétez le mot de passe"
       />
 
-      <div className="space-y-1">
-        <label className="block text-sm font-medium text-gray-300">
+      <div className="space-y-1.5">
+        <label className="block text-sm font-medium text-white/60 font-body tracking-wide">
           Vous êtes
         </label>
-        <select
-          name="role"
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#D4AF37]"
-          defaultValue="CLIENT"
-        >
-          <option value="CLIENT">Particulier</option>
-          <option value="PROFESSIONAL">Professionnel</option>
-        </select>
+        <div className="liquid-glass rounded-xl overflow-hidden">
+          <select
+            name="role"
+            className="w-full bg-transparent text-white text-sm font-body px-4 py-3 outline-none appearance-none cursor-pointer"
+            defaultValue="CLIENT"
+          >
+            <option value="CLIENT" className="bg-black">Particulier</option>
+            <option value="PROFESSIONAL" className="bg-black">Professionnel</option>
+          </select>
+        </div>
       </div>
 
       <Button type="submit" fullWidth loading={loading}>
         Créer mon compte
       </Button>
 
-      <p className="text-center text-sm text-gray-500">
+      <p className="text-center text-sm text-white/30 font-body">
         Déjà inscrit ?{" "}
-        <Link href="/auth/login" className="text-[#D4AF37] hover:underline">
+        <Link href="/auth/login" className="text-white/60 hover:text-white transition-colors">
           Se connecter
         </Link>
       </p>

@@ -33,7 +33,7 @@ public class ProviderController {
     public ResponseEntity<ApiResponse<Page<ProviderSummaryResponse>>> search(
             @RequestParam(required = false) String query,
             @RequestParam(required = false) String city,
-            @RequestParam(required = false) UUID category,
+            @RequestParam(required = false) String category,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "12") int size) {
         var result = providerService.searchProviders(query, city, category, page, size);

@@ -36,12 +36,15 @@ public class ProviderService {
                 .toList();
     }
 
-    public Page<ProviderSummaryResponse> searchProviders(String query, String city, UUID categoryId, int page, int size) {
+    public Page<ProviderSummaryResponse> searchProviders(String query, String city, String categorySlug, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Provider> providers;
 
-        if (categoryId != null) {
-            providers = providerRepository.findByCategoryId(categoryId, pageable);
+        if (categorySlug != null && !categorySlug.isBlank()) {
+            var category = categoryRepository.findBySlug(categorySlug).orElse(null);
+            providers = category != null
+                    ? providerRepository.findByCategoryId(category.getId(), pageable)
+                    : Page.empty(pageable);
         } else if (city != null && !city.isBlank()) {
             providers = providerRepository.findByCity(city, pageable);
         } else if (query != null && !query.isBlank()) {
